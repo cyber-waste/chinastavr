@@ -15,8 +15,12 @@ def m = []
 
 '/input.data'.lines().each {
     line ->
-        def aAsString = line.split(' ')[0]
-        def mAsString = line.split(' ')[1]
+        def elements = line.replace('x', ' ').replace('=', ' ').replace('mod', ' ').findAll({
+            it.trim().length() > 0
+        })
+
+        def aAsString = elements[0]
+        def mAsString = elements[1]
 
         a << Integer.parseInt(aAsString)
         m << Integer.parseInt(mAsString)
