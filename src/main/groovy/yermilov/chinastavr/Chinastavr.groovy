@@ -22,8 +22,8 @@ def m = []
         def aAsString = elements[0]
         def mAsString = elements[1]
 
-        a << Integer.parseInt(aAsString)
-        m << Integer.parseInt(mAsString)
+        a << new BigInteger(aAsString)
+        m << new BigInteger(mAsString)
 }
 
 def chinaResolver = new ChinaResolver(a: a, m: m)

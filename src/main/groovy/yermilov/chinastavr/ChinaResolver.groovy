@@ -64,9 +64,9 @@ class ChinaResolver {
             return new Expando(x: 0, y: 1, gcd: b)
         }
 
-        def answer = gcdex(b % a, a);
-        int x = answer.y - (b / a) * answer.x;
-        int y = answer.x;
+        def answer = gcdex(b % a, a)
+        BigInteger x = answer.y - (b / a) * answer.x
+        BigInteger y = answer.x
 
         return new Expando(x: x, y: y, gcd: answer.gcd)
     }
