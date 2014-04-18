@@ -15,7 +15,7 @@ def m = []
 
 '/input.data'.lines().each {
     line ->
-        def elements = line.replace('x', ' ').replace('=', ' ').replace('mod', ' ').findAll({
+        def elements = line.replace('x', ' ').replace('=', ' ').replace('mod', ' ').split(' ').findAll({
             it.trim().length() > 0
         })
 
