@@ -55,17 +55,19 @@ class ChinaResolver {
         })
     }
 
-    def findInverse(def a, def m) {
+    def findInverse(BigInteger a, BigInteger m) {
         (gcdex(a, m).x % m + m) % m
     }
 
-    def gcdex(def a, def b) {
+    def gcdex(BigInteger a, BigInteger b) {
         if (a == 0) {
-            return new Expando(x: 0, y: 1, gcd: b)
+            return new Expando(x: new BigInteger(0), y: new BigInteger(1), gcd: b)
         }
 
         def answer = gcdex(b % a, a)
-        BigInteger x = answer.y - (b / a) * answer.x
+        BigInteger div = b / a
+
+        BigInteger x = answer.y - div * answer.x
         BigInteger y = answer.x
 
         return new Expando(x: x, y: y, gcd: answer.gcd)
